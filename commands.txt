@@ -1,0 +1,396 @@
+sathish@MacBook-Pro react-b51 % git status
+fatal: not a git repository (or any of the parent directories): .git
+sathish@MacBook-Pro react-b51 % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /Users/sathish/Desktop/react-b51/.git/
+sathish@MacBook-Pro react-b51 % git branch
+sathish@MacBook-Pro react-b51 % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .eslintrc.cjs
+        .gitignore
+        README.md
+        index.html
+        package-lock.json
+        package.json
+        public/
+        src/
+        vite.config.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+sathish@MacBook-Pro react-b51 % git add .
+sathish@MacBook-Pro react-b51 % git branch
+sathish@MacBook-Pro react-b51 % git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .eslintrc.cjs
+        new file:   .gitignore
+        new file:   README.md
+        new file:   index.html
+        new file:   package-lock.json
+        new file:   package.json
+        new file:   public/vite.svg
+        new file:   src/App.css
+        new file:   src/App.jsx
+        new file:   src/assets/react.svg
+        new file:   src/index.css
+        new file:   src/main.jsx
+        new file:   vite.config.js
+
+sathish@MacBook-Pro react-b51 % git commit -m 'initial react project setup'
+[master (root-commit) 577b921] initial react project setup
+ 13 files changed, 4054 insertions(+)
+ create mode 100644 .eslintrc.cjs
+ create mode 100644 .gitignore
+sathish@MacBook-Pro react-b51 % git branch
+* master
+sathish@MacBook-Pro react-b51 % git log master
+commit 577b921630276a12bfd5045fb09826314d0608d3 (HEAD -> master)
+Author: githubscientist <sathish.datascientist@gmail.com>
+Date:   Thu Oct 12 19:09:42 2023 +0530
+
+    initial react project setup
+sathish@MacBook-Pro react-b51 % git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    src/App.css
+        modified:   src/App.jsx
+sathish@MacBook-Pro react-b51 % git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    src/App.css
+        modified:   src/App.jsx
+        deleted:    src/index.css
+        modified:   src/main.jsx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+sathish@MacBook-Pro react-b51 % git add .
+sathish@MacBook-Pro react-b51 % git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    src/App.css
+        modified:   src/App.jsx
+        deleted:    src/index.css
+        modified:   src/main.jsx
+
+sathish@MacBook-Pro react-b51 % git commit -m 'project files cleaned'
+[master 5863aec] project files cleaned
+ 4 files changed, 4 insertions(+), 148 deletions(-)
+ delete mode 100644 src/App.css
+ delete mode 100644 src/index.css
+sathish@MacBook-Pro react-b51 % git status
+On branch master
+nothing to commit, working tree clean
+sathish@MacBook-Pro react-b51 % git log
+commit 5863aec35aed01c529b35799c9c03c5617b62eb3 (HEAD -> master)
+Author: githubscientist <sathish.datascientist@gmail.com>
+Date:   Thu Oct 12 19:19:40 2023 +0530
+
+    project files cleaned
+
+commit 577b921630276a12bfd5045fb09826314d0608d3
+Author: githubscientist <sathish.datascientist@gmail.com>
+Date:   Thu Oct 12 19:09:42 2023 +0530
+
+    initial react project setup
+sathish@MacBook-Pro react-b51 % git show 5863aec35aed01c529b35799c9c03c5617b62eb3
+commit 5863aec35aed01c529b35799c9c03c5617b62eb3 (HEAD -> master)
+Author: githubscientist <sathish.datascientist@gmail.com>
+Date:   Thu Oct 12 19:19:40 2023 +0530
+
+    project files cleaned
+
+diff --git a/src/App.css b/src/App.css
+deleted file mode 100644
+index b9d355d..0000000
+--- a/src/App.css
++++ /dev/null
+@@ -1,42 +0,0 @@
+-#root {
+-  max-width: 1280px;
+-  margin: 0 auto;
+-  padding: 2rem;
+-  text-align: center;
+:...skipping...
+commit 5863aec35aed01c529b35799c9c03c5617b62eb3 (HEAD -> master)
+Author: githubscientist <sathish.datascientist@gmail.com>
+Date:   Thu Oct 12 19:19:40 2023 +0530
+
+    project files cleaned
+
+diff --git a/src/App.css b/src/App.css
+deleted file mode 100644
+index b9d355d..0000000
+--- a/src/App.css
++++ /dev/null
+@@ -1,42 +0,0 @@
+-#root {
+-  max-width: 1280px;
+-  margin: 0 auto;
+-  padding: 2rem;
+-  text-align: center;
+-}
+-
+-.logo {
+-  height: 6em;
+-  padding: 1.5em;
+-  will-change: filter;
+-  transition: filter 300ms;
+-}
+-.logo:hover {
+-  filter: drop-shadow(0 0 2em #646cffaa);
+-}
+-.logo.react:hover {
+-  filter: drop-shadow(0 0 2em #61dafbaa);
+-}
+-
+-@keyframes logo-spin {
+-  from {
+-    transform: rotate(0deg);
+-  }
+-  to {
+-    transform: rotate(360deg);
+-  }
+-}
+-
+-@media (prefers-reduced-motion: no-preference) {
+-  a:nth-of-type(2) .logo {
+-    animation: logo-spin infinite 20s linear;
+-  }
+-}
+-
+-.card {
+-  padding: 2em;
+-}
+-
+-.read-the-docs {
+-  color: #888;
+-}
+diff --git a/src/App.jsx b/src/App.jsx
+index b8b8473..4f40721 100644
+--- a/src/App.jsx
++++ b/src/App.jsx
+@@ -1,35 +1,7 @@
+-import { useState } from 'react'
+-import reactLogo from './assets/react.svg'
+-import viteLogo from '/vite.svg'
+-import './App.css'
+-
+-function App() {
+-  const [count, setCount] = useState(0)
+-
++const App = () => {
+   return (
+-    <>
+-      <div>
+-        <a href="https://vitejs.dev" target="_blank">
+-          <img src={viteLogo} className="logo" alt="Vite logo" />
+-        </a>
+-        <a href="https://react.dev" target="_blank">
+-          <img src={reactLogo} className="logo react" alt="React 
+logo" />
+-        </a>
+-      </div>
+-      <h1>Vite + React</h1>
+-      <div className="card">
+-        <button onClick={() => setCount((count) => count + 1)}>
+-          count is {count}
+-        </button>
+-        <p>
+-          Edit <code>src/App.jsx</code> and save to test HMR
+-        </p>
+-      </div>
+-      <p className="read-the-docs">
+-        Click on the Vite and React logos to learn more
+-      </p>
+-    </>
++    <p>Hello World!</p>
+   )
+ }
+ 
+-export default App
++export default App;
+\ No newline at end of file
+diff --git a/src/index.css b/src/index.css
+deleted file mode 100644
+index 2c3fac6..0000000
+--- a/src/index.css
++++ /dev/null
+@@ -1,69 +0,0 @@
+-:root {
+-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-s
+erif;
+-  line-height: 1.5;
+-  font-weight: 400;
+-
+-  color-scheme: light dark;
+-  color: rgba(255, 255, 255, 0.87);
+-  background-color: #242424;
+-
+-  font-synthesis: none;
+-  text-rendering: optimizeLegibility;
+-  -webkit-font-smoothing: antialiased;
+-  -moz-osx-font-smoothing: grayscale;
+-  -webkit-text-size-adjust: 100%;
+-}
+-
+-a {
+-  font-weight: 500;
+-  color: #646cff;
+-  text-decoration: inherit;
+-}
+-a:hover {
+-  color: #535bf2;
+-}
+-
+-body {
+-  margin: 0;
+-  display: flex;
+-  place-items: center;
+-  min-width: 320px;
+-  min-height: 100vh;
+-}
+-
+-h1 {
+-  font-size: 3.2em;
+-  line-height: 1.1;
+-}
+-
+-button {
+-  border-radius: 8px;
+-  border: 1px solid transparent;
+-  padding: 0.6em 1.2em;
+-  font-size: 1em;
+-  font-weight: 500;
+-  font-family: inherit;
+-  background-color: #1a1a1a;
+-  cursor: pointer;
+-  transition: border-color 0.25s;
+-}
+-button:hover {
+-  border-color: #646cff;
+-}
+-button:focus,
+-button:focus-visible {
+-  outline: 4px auto -webkit-focus-ring-color;
+-}
+-
+-@media (prefers-color-scheme: light) {
+-  :root {
+-    color: #213547;
+-    background-color: #ffffff;
+-  }
+-  a:hover {
+-    color: #747bff;
+-  }
+-  button {
+-    background-color: #f9f9f9;
+-  }
+-}
+diff --git a/src/main.jsx b/src/main.jsx
+index 54b39dd..1d298e8 100644
+--- a/src/main.jsx
++++ b/src/main.jsx
+@@ -1,10 +1,5 @@
+ import React from 'react'
+ import ReactDOM from 'react-dom/client'
+ import App from './App.jsx'
+-import './index.css'
+ 
+-ReactDOM.createRoot(document.getElementById('root')).render(
+-  <React.StrictMode>
+-    <App />
+-  </React.StrictMode>,
+-)
++ReactDOM.createRoot(document.getElementById('root')).render(<App 
+/>);
+sathish@MacBook-Pro react-b51 % git log
+commit 5863aec35aed01c529b35799c9c03c5617b62eb3 (HEAD -> master)
+Author: githubscientist <sathish.datascientist@gmail.com>
+Date:   Thu Oct 12 19:19:40 2023 +0530
+
+    project files cleaned
+
+commit 577b921630276a12bfd5045fb09826314d0608d3
+Author: githubscientist <sathish.datascientist@gmail.com>
+Date:   Thu Oct 12 19:09:42 2023 +0530
+
+    initial react project setup
+sathish@MacBook-Pro react-b51 % git checkout 577b921630276a12bfd5045fb09826314d0608d3
+Note: switching to '577b921630276a12bfd5045fb09826314d0608d3'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 577b921 initial react project setup
+sathish@MacBook-Pro react-b51 % git checkout 5863aec35aed01c529b35799c9c03c5617b62eb3
+Previous HEAD position was 577b921 initial react project setup
+HEAD is now at 5863aec project files cleaned
+sathish@MacBook-Pro react-b51 % git log
+commit 5863aec35aed01c529b35799c9c03c5617b62eb3 (HEAD, master)
+Author: githubscientist <sathish.datascientist@gmail.com>
+Date:   Thu Oct 12 19:19:40 2023 +0530
+
+    project files cleaned
+
+commit 577b921630276a12bfd5045fb09826314d0608d3
+Author: githubscientist <sathish.datascientist@gmail.com>
+Date:   Thu Oct 12 19:09:42 2023 +0530
+
+    initial react project setup
+sathish@MacBook-Pro react-b51 % git remote -v
+sathish@MacBook-Pro react-b51 % git remote add origin https://github.com/githubscientist/react-b51.git
+sathish@MacBook-Pro react-b51 % git remote -v
+origin  https://github.com/githubscientist/react-b51.git (fetch)
+origin  https://github.com/githubscientist/react-b51.git (push)
+sathish@MacBook-Pro react-b51 % git branch               
+* (HEAD detached at 5863aec)
+  master
+sathish@MacBook-Pro react-b51 % git checkout master
+Switched to branch 'master'
+sathish@MacBook-Pro react-b51 % git branch
+* master
+sathish@MacBook-Pro react-b51 % git push -u origin master
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (23/23), 38.48 KiB | 6.41 MiB/s, done.
+Total 23 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/githubscientist/react-b51.git
+ * [new branch]      master -> master
